@@ -108,25 +108,85 @@
 
 //EXAMPLE2
 //CountUniqueValues
-// how many numbers appeared in a sorted array
-function countUniqueValues(ary) {
+// how many unique numbers appeared in a sorted array
+// function countUniqueValues(ary) {
 
-  let large = 1;
-  let smallNumber = ary[0];
-  let count = 1;
-  if (ary.length === 0) {
-    return 0;
-  }
-  while (large <= ary.length - 1) {
-    if (smallNumber !== ary[large]) {
-      count++;
-      smallNumber = ary[large];
-      large++;
+//   let large = 1;
+//   let smallNumber = ary[0];
+//   let count = 1;
+//   if (ary.length === 0) {
+//     return 0;
+//   }
+//   while (large <= ary.length - 1) {
+//     if (smallNumber !== ary[large]) {
+//       count++;
+//       smallNumber = ary[large];
+//       large++;
+//     } else {
+//       large++;
+//     }
+//   }
+//   return count;
+// }
+
+// console.log(countUniqueValues([1, 2, 2, 2, 2, 2, 3, 4, 5]));
+// OR 
+// use an object like in frequency counter
+
+
+
+
+
+//***************************************************************
+//                   Sliding Window Pattern
+//***************************************************************
+//Example1
+//Find Max sum of sub array, input(array, window size)
+//keep a previous sum, every time add the next number and subtract the first number
+// function maxSubarraySum(ary, num) {
+//   let maxSum = 0;
+//   let tmpSum = 0;
+//   if (ary.length < num) {
+//     return null;
+//   }
+//   for (let i = 0; i < num; i++) {
+//     tmpSum += ary[i];
+//     maxSum = tmpSum;
+//   }
+//   for (let i = num; i < ary.length; i++) {
+//     tmpSum = tmpSum + ary[i] - ary[i - num];
+//     maxSum = Math.max(tmpSum, maxSum);
+//   }
+//   return maxSum;
+// }
+// console.log(maxSubarraySum([1, 20, 3, 4, 5, 6, 7], 3))
+
+
+
+
+
+//***************************************************************
+//                   Divide and Conquer
+//***************************************************************
+//given sorted list return index of the desired number
+//Binary Search:
+function binarySearch(ary, num) {
+  let min = 0;
+  let max = ary.length - 1;
+
+  while (min <= max) {
+    let middle = Math.floor((max + min) / 2);
+    let currentNum = ary[middle];
+
+    if (currentNum < num) {
+      min = middle + 1;
+    } else if (currentNum > num) {
+      max = middle - 1;
     } else {
-      large++;
+      return middle;
     }
   }
-  return count;
-}
 
-console.log(countUniqueValues([1, 2, 2, 2, 2, 2, 3, 4, 5]));
+  return -1; //num not found in ary
+
+}
