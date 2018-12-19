@@ -170,23 +170,22 @@
 //***************************************************************
 //given sorted list return index of the desired number
 //Binary Search:
-function binarySearch(ary, num) {
-  let min = 0;
-  let max = ary.length - 1;
+// function binarySearch(ary, num) {
+//   let min = 0;
+//   let max = ary.length - 1;
 
-  while (min <= max) {
-    let middle = Math.floor((max + min) / 2);
-    let currentNum = ary[middle];
+//   while (min <= max) {
+//     let middle = Math.floor((max + min) / 2);
+//     let currentNum = ary[middle];
 
-    if (currentNum < num) {
-      min = middle + 1;
-    } else if (currentNum > num) {
-      max = middle - 1;
-    } else {
-      return middle;
-    }
-  }
+//     if (currentNum < num) {
+//       min = middle + 1;
+//     } else if (currentNum > num) {
+//       max = middle - 1;
+//     } else {
+//       return middle;
+//     }
+//   }
 
-  return -1; //num not found in ary
-
-}
+//   return -1; //num not found in ary
+// }
