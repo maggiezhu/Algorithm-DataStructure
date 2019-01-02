@@ -67,9 +67,6 @@ process.stdin.on('end', function () {
 
 //TODO: Refactor this function to use functional programming paradigms
 function getMostRecentInfractionForVehicle(plate) {
-
-
-
   if (infractionsByCar.length > 0) {
     const sorted = infractionsByCar.sort((a, b) => {
       if (new Date(a.date).getTime() > new Date(b.date).getTime()) {
@@ -99,5 +96,5 @@ function getMostRecentInfractionForVehicle(plate) {
         return 0;
       }
     });
-    return result[0];
+  return result[0];
 }
