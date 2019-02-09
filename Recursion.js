@@ -43,8 +43,14 @@
 // }
 // console.log(collectOddValues([1, 2, 3, 4, 5, 6, 7, 7]));
 
+/*
+Pure Recursion 
+Arrays: slice(), the spread operator, concat() DO NOT mutate the array itself
+Strings: are immutable, use slice, substring to make copies of them
+Object: make copies using Object.assign or the spread operator 
 
-//Pure Recursion 
+*/
+
 function collectOddValues(arr) {
   let result = [];
   if (arr.length === 0) {

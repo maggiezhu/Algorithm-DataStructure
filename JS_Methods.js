@@ -6,13 +6,51 @@ for (var index in Array) {}
 for (var key in Object) {}
 
 
+//spread syntax 
+//Any argument in the argument list can use spread syntax and it can be used multiple times.
+// Array
+arr1 = [...arr1, ...arr2];
+// Object
+var clonedObj = {
+  ...obj1
+};
+var mergedObj = {
+  ...obj1,
+  ...obj2
+};
+Array.includes(element); //return true of false
+
+
 // String Methods:
 string.toLowerCase();
+string.includes("");
 
 // Array Methods:
 Array.splice(index, numberofElement_toReplace, replace_with) //replace
 Array.splice(index, numberofElement_toRemove)
 Array.slice([begin, [end); //make another copy of the array without changing the original one
+      //Copy array:
+      Array.slice()
+      Array = [...Array]
+
+      Array.shift() // pop element form beginning of array
+      Array.unshift() // add elements to the beginning and return the new length
+      Array.pop() //pop from the end of array
+      Array.push() // add to the end and return length
+
+      //Object Methods:
+      const object2 = Object.assign(object1, {
+        c: 4,
+        d: 5
+      });
+      // the later part will overwrite the orevious part 
+
+      // Two ways to create an object:
+      obj = {
+        key: value
+      };
+      obj = new Object();
+
 
       //check if something is alphanumeric: 
       if (/[a-z0-9]/.test(char)) {} //SLOW
