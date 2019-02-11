@@ -2,6 +2,8 @@
 
 //Insert: O(log n)
 //Search: O(log n)
+// Not garrenteed if the tree get really deep and not balanced, similar to linear time
+
 
 class Node {
   constructor(value) {
