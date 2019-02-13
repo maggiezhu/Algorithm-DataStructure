@@ -24,6 +24,7 @@ Array.includes(element); //return true of false
 // String Methods:
 string.toLowerCase();
 string.includes("");
+string.substring(beginning, endNotIncluded);
 
 // Array Methods:
 Array.splice(index, numberofElement_toReplace, replace_with) //replace
